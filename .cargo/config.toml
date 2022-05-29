@@ -4,9 +4,11 @@ target = "thumbv6m-none-eabi"
 
 # Target specific options
 [target.thumbv6m-none-eabi]
-# On run with ARM target, convert the Rust 
+# On run with ARM target, convert the Rust
 # ELF output to UF2 and auto-flash it to the Pico
+# Remove -d to skip auto-flash and only generate UF2 file
 runner = "elf2uf2-rs -d"
+
 # Also pass some extra options to rustc, some of which get passed on to the linker.
 #
 # * linker argument --nmagic turns off page alignment of sections (which saves
